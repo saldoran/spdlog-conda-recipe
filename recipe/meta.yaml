@@ -14,7 +14,10 @@ build:
 requirements:
   build:
     - cmake
+    {% if win %}  # do nothing
+    {% else %}
     - make
+    {% endif %}
     - {{ compiler('cxx') }}
   host:
     - fmt
